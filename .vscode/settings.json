@@ -1,0 +1,16 @@
+{
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true,
+    "python.testing.cwd": "${workspaceFolder}/app",
+    "python.testing.pytestArgs": [
+        "tests",
+        "-rP",
+    ],
+    "python.defaultInterpreterPath": "${workspaceFolder}/app/.venv/bin/python",
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}/app"
+    ],
+    "pylint.args": [
+        "--extension-pkg-whitelist=pyodbc"
+    ]
+}

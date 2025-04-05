@@ -1,0 +1,5 @@
+pytest==8.*
+pytest-cov==6.*
+azure-identity==1.21.*
+openai==1.68.*
+pyodbc==5.2.*

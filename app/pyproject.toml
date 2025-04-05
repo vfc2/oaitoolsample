@@ -1,0 +1,9 @@
+[tool.pytest.ini_options]
+addopts = [
+    "--import-mode=importlib",
+]
+markers = [
+    "e2e: mark test as end-to-end",
+    "integration: mark test as integration",
+    "unit: mark test as unit",
+]
