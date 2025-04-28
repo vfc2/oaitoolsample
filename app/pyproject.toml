@@ -7,3 +7,6 @@ markers = [
     "integration: mark test as integration",
     "unit: mark test as unit",
 ]
+
+[tool.coverage.run]
+omit = ["tests/*"]

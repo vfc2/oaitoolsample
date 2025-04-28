@@ -58,23 +58,3 @@ def create_booking(
     repo.add(booking)
 
     return booking_id
-
-
-def cancel_booking(booking_id: str, repo: AbstractRepository) -> bool:
-    """Cancel an existing booking.
-
-    Args:
-        booking_id (str): The ID of the booking to cancel.
-        repo (AbstractRepository): Repository to interact with.
-
-    Returns:
-        bool: True if booking was successfully canceled, False if booking was not found.
-    """
-    # First check if the booking exists
-    booking = repo.get(booking_id)
-    if not booking:
-        return False
-
-    # Delete the booking
-    repo.remove(booking_id)
-    return True
