@@ -1,5 +1,4 @@
 #/bin/bash
-
 if [ -z "$1" ]
   then
     echo "No project name argument supplied - Usage: deploy.sh <project-name>"

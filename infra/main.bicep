@@ -37,6 +37,5 @@ module roleAssignments './modules/role-assignments.bicep' = {
     }
 }
 
-// output openAiEndpoint string = '${openAi.outputs.openAiServiceName}.openai.azure.com/'
 output openAiEndpoint string = openAi.outputs.openAiEndpoint
 output dbConnectionString string = 'SERVER=${database.outputs.sqlServerName}${environment().suffixes.sqlServerHostname};DATABASE=${database.outputs.sqlDatabaseName}'

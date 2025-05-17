@@ -1,13 +1,13 @@
 FROM python:3.12-bullseye AS base_image
 
-# update data from apt-get repositories
+# System update and install dependencies
 RUN apt-get update && \
     apt-get -y install unzip && \
     apt-get -y install curl && \
     apt-get -y install gnupg && \
     apt-get -y install wget
 
-# sql server drivers and bcp
+# Azure SQL ODBC Driver
 RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - && \
     curl https://packages.microsoft.com/config/debian/11/prod.list > /etc/apt/sources.list.d/mssql-release.list && \
     apt-get update && \
