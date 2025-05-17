@@ -1,10 +1,11 @@
 #/bin/bash
-if [ -z "$1" ]
+if [ -z "$2" ]
   then
-    echo "No project name argument supplied - Usage: deploy.sh <project-name>"
+    echo "Invalid parameters - Usage: deploy.sh <project-name> <region>"
     exit 1
 fi
 project_name=$1
+region=$2
 
 echo "Creating the 'AI Developers' group..."
 group_id=$(az ad group create --display-name "AI Developers" --mail-nickname "AIDevelopers" --output tsv --query id)
@@ -12,7 +13,7 @@ group_id=$(az ad group create --display-name "AI Developers" --mail-nickname "AI
 echo "Deploying project $project_name to Azure..."
 outputs=$(az deployment sub create \
   --name "${project_name}_deployment" \
-  --location swedencentral \
+  --location $region \
   --template-file infra/main.bicep \
   --parameters projectName=$project_name aiDevelopersGroupPrincipalId=$group_id \
   --output tsv \

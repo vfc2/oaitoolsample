@@ -3,8 +3,7 @@
     "python.testing.pytestEnabled": true,
     "python.testing.cwd": "${workspaceFolder}/app",
     "python.testing.pytestArgs": [
-        "tests",
-        "-rP",
+        "tests"
     ],
     "python.defaultInterpreterPath": "${workspaceFolder}/app/.venv/bin/python",
     "python.analysis.extraPaths": [
